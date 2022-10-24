@@ -25,7 +25,7 @@ public class TaskThreadPoolExecutor {
             }
         }
         double countElem = (double) (program.sizeMatr * program.sizeMatr - program.sizeMatr) / 2;
-        System.out.println("Time: " + (System.nanoTime() - start));
+        System.out.println("Time: " + (System.nanoTime() - start)+" Nanoseconds");
         return totalSum / countElem;
     }
 

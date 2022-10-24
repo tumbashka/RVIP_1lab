@@ -3,7 +3,7 @@ import java.util.concurrent.ExecutionException;
 
 
 public class program {
-    static int sizeMatr = 12000;
+    static int sizeMatr = 100;
     static int[][] matr = new int[sizeMatr][sizeMatr];
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
@@ -14,19 +14,19 @@ public class program {
             }
         }
 
-        TaskOneThread task1 = new TaskOneThread();
         System.out.println("TaskOneThread:");
-        System.out.println(task1.calculate());
+        TaskOneThread task1 = new TaskOneThread();
+        System.out.println("Result = " + task1.calculate());
+        System.out.println();
 
         System.out.println("TaskThreadPoolExecutor:");
         TaskThreadPoolExecutor task2 = new TaskThreadPoolExecutor();
-        System.out.println(task2.calculate());
+        System.out.println("Result = " + task2.calculate());
+        System.out.println();
 
         System.out.println("TaskForkJoinPool:");
-        ForkJoinPollMatrix task3 = new ForkJoinPollMatrix(matr);
-
-        System.out.println(task3.calculate());
-
+        TaskForkJoinPool task3 = new TaskForkJoinPool();
+        System.out.println("Result = " + task3.calculate());
     }
 }
 

@@ -9,7 +9,7 @@ public class TaskOneThread {
                 count++;
             }
         }
-        System.out.println("Time: " + (System.nanoTime() - start));
+        System.out.println("Time: " + (System.nanoTime() - start)+" Nanoseconds");
 
         return sum/count;
     }
